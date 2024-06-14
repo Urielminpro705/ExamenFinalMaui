@@ -139,7 +139,6 @@
                                 />
                             </HorizontalStackLayout>
                             <Entry
-                                x:Name="txtNombreMateria"
                                 BackgroundColor="#18222B"
                                 Text="{Binding Nombre}"
                             />
@@ -308,7 +307,6 @@
                             FontFamily="MontserratUWU"
                         />
                         <Label
-                            x:Name="lblMateria"
                             Text="{Binding Materia.Nombre}"
                             FontAttributes="Bold"
                             FontSize="30"
@@ -456,6 +454,456 @@
                     />
                     <Label
                         Text="{Binding Materia.ValorRubros[2]}"
+                        Grid.Column="1"
+                        HorizontalOptions="Center"
+                        Grid.Row="4"
+                        VerticalOptions="Center"
+                        FontAttributes="Bold"
+                        FontSize="15"
+                        FontFamily="MontserratUWU"
+                    />
+                    <Entry
+                        Grid.Row="4"
+                        Grid.Column="3"
+                        Keyboard="Numeric"
+                        BackgroundColor="#18222B"
+                        VerticalOptions="Center"
+                        Margin="10,0,10,0"
+                        Text="{Binding Cal3}"
+                    />
+                    <Button
+                        Text="Calcular calificacion"
+                        VerticalOptions="Center"
+                        Grid.Row="5"
+                        Padding="0"
+                        Margin="10,0,10,0"
+                        Grid.ColumnSpan="4"
+                        Background="{StaticResource GradientBackgroundColorido}"
+                        TextColor="White"
+                        FontSize="15"
+                        FontAttributes="Bold"
+                        FontFamily="MontserratUWU"
+                        Command="{Binding CalcularCalificacionCommand}"
+                    />
+                    <HorizontalStackLayout
+                        Grid.Row="6"
+                        Grid.ColumnSpan="4"
+                        HorizontalOptions="Center">
+                        <VerticalStackLayout
+                            Spacing="-7"
+                            VerticalOptions="Center">
+                            <Label
+                                Text="Calificación"
+                                HorizontalOptions="Start"
+                                Margin="10,0,10,0"
+                                FontAttributes="Bold"
+                                FontSize="15"
+                                FontFamily="MontserratUWU"
+                            />
+                            <Label
+                                Text="FINAL"
+                                HorizontalOptions="Start"
+                                Margin="10,0,10,0"
+                                FontAttributes="Bold"
+                                FontSize="30"
+                                TextColor="#8EC5FC"
+                                FontFamily="MontserratUWU"
+                            />
+                        </VerticalStackLayout>
+                        <Label
+                            Text="{Binding Materia.CalificacionTotal}"
+                            VerticalOptions="Center"
+                            FontAttributes="Bold"
+                            FontSize="45"
+                            FontFamily="MontserratUWU"
+                        />
+                    </HorizontalStackLayout>
+                    
+                </Grid>
+            </Frame>
+        </Grid>
+    </ContentPage>
+    <ContentPage Title="SEMESTRE" Background="{StaticResource GradientBackgroundColorido}" Padding="0,0,0,0">
+        <ContentPage.BindingContext>
+            <vm:SemestreViewModel/>
+        </ContentPage.BindingContext>
+        <Grid 
+            ColumnDefinitions="0.45*,0.55*"
+            Margin="0,0,0,80">
+            <Frame
+                HorizontalOptions="Fill"
+                VerticalOptions="Fill"
+                Margin="10"
+                CornerRadius="10"
+                Padding="0">
+                <Grid RowDefinitions="0.2*,0.8*">
+                    <BoxView
+                        BackgroundColor="#18222B"
+                        Grid.ColumnSpan="2"
+                        Grid.Row="1"
+                        Margin="10,0,10,10"
+                        CornerRadius="10"
+                    />
+                    <Grid 
+                        Grid.Row="1" 
+                        Padding="10,40,10,0"
+                        Margin="10"
+                        ColumnDefinitions="0.6*,5,0.4*"
+                        RowDefinitions="90,40,0.3*,0.3*,0.3*,70">
+                        <VerticalStackLayout Grid.ColumnSpan="3" Grid.Row="0"
+                            VerticalOptions="Center">
+                            <HorizontalStackLayout>
+                                <Label
+                                    Text="Nombre de la"
+                                    Margin="10,0,0,5"
+                                    Padding="0"
+                                    FontSize="15"
+                                    FontFamily="MontserratUWU"
+                                />
+                                <Label
+                                    Text="MATERIA"
+                                    Margin="10,0,0,0"
+                                    FontSize="15"
+                                    FontFamily="MontserratUWU"
+                                    TextColor="#8EC5FC"
+                                    FontAttributes="Bold"
+                                />
+                            </HorizontalStackLayout>
+                            <Entry
+                                BackgroundColor="#18222B"
+                                Text="{Binding Nombre}"
+                            />
+                        </VerticalStackLayout>
+                        <BoxView
+                            VerticalOptions="Fill"
+                            Margin="0,10,0,10"
+                            Background="{StaticResource GradientBackgroundColorido}"
+                            WidthRequest="1"
+                            Grid.Column="1"
+                            Grid.Row="2"
+                            Grid.RowSpan="3"
+                        />
+                        <HorizontalStackLayout
+                            Grid.Row="1"
+                            HorizontalOptions="Center"
+                            VerticalOptions="End"
+                            Margin="0,0,0,10">
+                            <Label
+                                Text="PARCIALES"
+                                FontAttributes="Bold"
+                                FontSize="15"
+                                FontFamily="MontserratUWU"
+                                TextColor="#8EC5FC"
+                            />
+                            <Label
+                                FontSize="15"
+                                FontFamily="MontserratUWU"
+                                Text=" a evaluar"
+                            />
+                        </HorizontalStackLayout>
+                        <HorizontalStackLayout
+                            Grid.Row="1"
+                            Grid.Column="2"
+                            HorizontalOptions="Center"
+                            VerticalOptions="End"
+                            Margin="0,0,0,10">
+                            <Label
+                                Text="VALOR"
+                                FontAttributes="Bold"
+                                FontSize="15"
+                                FontFamily="MontserratUWU"
+                                TextColor="#8EC5FC"
+                            />
+                            <Label
+                                FontSize="15"
+                                FontFamily="MontserratUWU"
+                                Text=" de los parciales"
+                            />
+                        </HorizontalStackLayout>
+                        <BoxView
+                            HorizontalOptions="Fill"
+                            Margin="0,0,10,0"
+                            Background="{StaticResource GradientBackgroundColorido}"
+                            HeightRequest="1"
+                            Grid.Row="2"
+                            VerticalOptions="End"
+                        />
+                        <BoxView
+                            HorizontalOptions="Fill"
+                            Margin="0,0,10,0"
+                            Background="{StaticResource GradientBackgroundColorido}"
+                            HeightRequest="1"
+                            Grid.Row="3"
+                            VerticalOptions="End"
+                        />
+                        <Label
+                            Grid.Row="2"
+                            VerticalOptions="Center"
+                            Margin="0,0,10,0"
+                            Text="PARCIAL 1"
+                            FontAttributes="Bold"
+                            FontFamily="MontserratUWU"
+                        />
+                        <Entry
+                            Grid.Row="2"
+                            Grid.Column="2"
+                            Keyboard="Numeric"
+                            BackgroundColor="#18222B"
+                            VerticalOptions="Center"
+                            Margin="10,0,0,0"
+                            Text="{Binding Val1}"
+                        />
+                        <Label
+                            Grid.Row="3"
+                            VerticalOptions="Center"
+                            Margin="0,0,10,0"
+                            Text="PARCIAL 2"
+                            FontAttributes="Bold"
+                            FontFamily="MontserratUWU"
+                        />
+                        <Entry
+                            Grid.Row="3"
+                            Grid.Column="2"
+                            Keyboard="Numeric"
+                            BackgroundColor="#18222B"
+                            VerticalOptions="Center"
+                            Margin="10,0,0,0"
+                            Text="{Binding Val2}"
+                        />
+                        <Label
+                            Grid.Row="4"
+                            VerticalOptions="Center"
+                            Margin="0,0,10,0"
+                            Text="PARCIAL 3"
+                            FontAttributes="Bold"
+                            FontFamily="MontserratUWU"
+                        />
+                        <Entry
+                            Grid.Row="4"
+                            Grid.Column="2"
+                            Keyboard="Numeric"
+                            BackgroundColor="#18222B"
+                            VerticalOptions="Center"
+                            Margin="10,0,0,0"
+                            Text="{Binding Val3}"
+                        />
+                        <Button
+                            Text="Aplicar Cambios"
+                            VerticalOptions="Center"
+                            Grid.Row="5"
+                            Padding="0"
+                            Grid.ColumnSpan="3"
+                            Background="{StaticResource GradientBackgroundColorido}"
+                            TextColor="White"
+                            FontSize="15"
+                            FontAttributes="Bold"
+                            FontFamily="MontserratUWU"
+                            Command="{Binding ActualizarDatosCommand}"
+                        />
+                    </Grid>
+                    <BoxView
+                        Background="{StaticResource GradientBackgroundColorido}"
+                        HorizontalOptions="Fill"
+                        VerticalOptions="Fill"
+                        Margin="10"
+                        CornerRadius="10"
+                    />
+                    <Frame
+                        WidthRequest="110"
+                        HeightRequest="110"
+                        VerticalOptions="End"
+                        Margin="0,0,0,-40"
+                        Background="{StaticResource GradientBackgroundColorido}"
+                        CornerRadius="55"
+                        BorderColor="Transparent"
+                        Padding="0">
+                        <Image
+                            Source="usuario.png"
+                            HeightRequest="120"
+                        />
+                    </Frame>
+                </Grid>
+            </Frame>
+            <Frame
+                Grid.Column="1"
+                HorizontalOptions="Fill"
+                VerticalOptions="Fill"
+                Margin="10"
+                CornerRadius="10"
+                Padding="0">
+                <Grid RowDefinitions="90,80,0.3*,0.3*,0.3*,50,100" ColumnDefinitions="0.4*,0.08*,5,0.4*" Margin="10">
+                    <BoxView
+                        BackgroundColor="#18222B"
+                        Grid.ColumnSpan="4"
+                        Grid.Row="0"
+                        CornerRadius="10"
+                    />
+                    <BoxView
+                        BackgroundColor="#18222B"
+                        Grid.ColumnSpan="4"
+                        Grid.Row="1"
+                        Grid.RowSpan="6"
+                        Margin="0,10,0,0"
+                        CornerRadius="10"
+                    />
+                    <VerticalStackLayout
+                        Margin="10,0,0,0"
+                        VerticalOptions="Center"
+                        Grid.ColumnSpan="3">
+                        <Label
+                            Text="Calificación de"
+                            FontAttributes="Bold"
+                            FontSize="15"
+                            FontFamily="MontserratUWU"
+                        />
+                        <Label
+                            Text="{Binding Semestre.Nombre}"
+                            FontAttributes="Bold"
+                            FontSize="30"
+                            FontFamily="MontserratUWU"
+                            TextColor="#8EC5FC"
+                        />
+                    </VerticalStackLayout>
+                    <HorizontalStackLayout
+                        Grid.Row="1"
+                        HorizontalOptions="Center"
+                        VerticalOptions="End"
+                        Margin="0,0,0,20">
+                        <Label
+                            Text="PARCIALES"
+                            FontAttributes="Bold"
+                            FontSize="15"
+                            FontFamily="MontserratUWU"
+                            TextColor="#8EC5FC"
+                        />
+                        <Label
+                            FontSize="15"
+                            FontFamily="MontserratUWU"
+                            Text=" a evaluar"
+                        />
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout
+                        Grid.Row="1"
+                        Grid.Column="3"
+                        HorizontalOptions="Center"
+                        VerticalOptions="End"
+                        Margin="0,0,0,20">
+                        <Label
+                            Text="CALIFICACIÓN"
+                            FontAttributes="Bold"
+                            FontSize="15"
+                            FontFamily="MontserratUWU"
+                            TextColor="#8EC5FC"
+                        />
+                        <Label
+                            FontSize="15"
+                            FontFamily="MontserratUWU"
+                            Text=" de los parciales"
+                        />
+                    </HorizontalStackLayout>
+                    <BoxView
+                        VerticalOptions="Fill"
+                        Margin="0,10,0,10"
+                        Background="{StaticResource GradientBackgroundColorido}"
+                        WidthRequest="1"
+                        Grid.Column="2"
+                        Grid.Row="2"
+                        Grid.RowSpan="3"
+                    />
+                    <BoxView
+                        VerticalOptions="Fill"
+                        Margin="0,10,0,10"
+                        Background="{StaticResource GradientBackgroundColorido}"
+                        WidthRequest="1"
+                        Grid.Column="1"
+                        HorizontalOptions="Start"
+                        Grid.Row="2"
+                        Grid.RowSpan="3"
+                    />
+                    <BoxView
+                        HorizontalOptions="Fill"
+                        VerticalOptions="End"
+                        Margin="10,0,10,0"
+                        Background="{StaticResource GradientBackgroundColorido}"
+                        HeightRequest="1"
+                        Grid.Row="2"
+                    />
+                    <BoxView
+                        HorizontalOptions="Fill"
+                        VerticalOptions="End"
+                        Margin="10,0,10,0"
+                        Background="{StaticResource GradientBackgroundColorido}"
+                        HeightRequest="1"
+                        Grid.Row="3"
+                    />
+                    
+                    <Label
+                        Text="PARCIAL 1"
+                        Grid.Row="2"
+                        VerticalOptions="Center"
+                        Margin="10,0,10,0"
+                        FontAttributes="Bold"
+                        FontSize="15"
+                        FontFamily="MontserratUWU"
+                    />
+                    <Label
+                        Text="{Binding Semestre.ValorParciales[0]}"
+                        Grid.Column="1"
+                        HorizontalOptions="Center"
+                        Grid.Row="2"
+                        VerticalOptions="Center"
+                        FontAttributes="Bold"
+                        FontSize="15"
+                        FontFamily="MontserratUWU"
+                    />
+                    <Entry
+                        Grid.Row="2"
+                        Grid.Column="3"
+                        Keyboard="Numeric"
+                        BackgroundColor="#18222B"
+                        VerticalOptions="Center"
+                        Margin="10,0,10,0"
+                        Text="{Binding Cal1}"
+                    />
+                    <Label
+                        Text="PARCIAL 2"
+                        Grid.Row="3"
+                        VerticalOptions="Center"
+                        Margin="10,0,10,0"
+                        FontAttributes="Bold"
+                        FontSize="15"
+                        FontFamily="MontserratUWU"
+                    />
+                    <Label
+                        Text="{Binding Semestre.ValorParciales[1]}"
+                        Grid.Column="1"
+                        HorizontalOptions="Center"
+                        Grid.Row="3"
+                        VerticalOptions="Center"
+                        FontAttributes="Bold"
+                        FontSize="15"
+                        FontFamily="MontserratUWU"
+                    />
+                    <Entry
+                        Grid.Row="3"
+                        Grid.Column="3"
+                        Keyboard="Numeric"
+                        BackgroundColor="#18222B"
+                        VerticalOptions="Center"
+                        Margin="10,0,10,0"
+                        Text="{Binding Cal2}"
+                    />
+                    <Label
+                        Text="PARCIAL 3"
+                        Grid.Row="4"
+                        VerticalOptions="Center"
+                        Margin="10,0,10,0"
+                        FontAttributes="Bold"
+                        FontSize="15"
+                        FontFamily="MontserratUWU"
+                    />
+                    <Label
+                        Text="{Binding Semestre.ValorParciales[2]}"
                         Grid.Column="1"
                         HorizontalOptions="Center"
                         Grid.Row="4"
