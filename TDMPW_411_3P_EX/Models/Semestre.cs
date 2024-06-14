@@ -5,4 +5,7 @@ public class Semestre
     public string Nombre { get; set; }
     public double[] ValorParciales { get; set; }
     public double[] Calificaciones { get; set; }
+    public double CalificacionParaPasar { get; set; }
+    public double CalificacionParaSerGood { get; set; }
+
 }

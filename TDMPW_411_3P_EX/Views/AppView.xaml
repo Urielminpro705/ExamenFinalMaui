@@ -749,7 +749,7 @@
                     <VerticalStackLayout
                         Margin="10,0,0,0"
                         VerticalOptions="Center"
-                        Grid.ColumnSpan="3">
+                        Grid.ColumnSpan="4">
                         <Label
                             Text="Calificación de"
                             FontAttributes="Bold"
@@ -912,17 +912,19 @@
                         FontSize="15"
                         FontFamily="MontserratUWU"
                     />
-                    <Entry
+                    <Label
+                        Text="{Binding Mensaje}"
                         Grid.Row="4"
                         Grid.Column="3"
-                        Keyboard="Numeric"
-                        BackgroundColor="#18222B"
                         VerticalOptions="Center"
+                        HorizontalOptions="Center"
                         Margin="10,0,10,0"
-                        Text="{Binding Cal3}"
+                        FontAttributes="Bold"
+                        FontSize="15"
+                        FontFamily="MontserratUWU"
                     />
                     <Button
-                        Text="Calcular calificacion"
+                        Text="Calcular calificacion necesaria"
                         VerticalOptions="Center"
                         Grid.Row="5"
                         Padding="0"
@@ -938,37 +940,70 @@
                     <HorizontalStackLayout
                         Grid.Row="6"
                         Grid.ColumnSpan="4"
-                        HorizontalOptions="Center">
+                        HorizontalOptions="Start">
                         <VerticalStackLayout
                             Spacing="-7"
                             VerticalOptions="Center">
                             <Label
-                                Text="Calificación"
+                                Text="Necesitas sacar un"
                                 HorizontalOptions="Start"
-                                Margin="10,0,10,0"
+                                Margin="10,0,10,5"
                                 FontAttributes="Bold"
                                 FontSize="15"
                                 FontFamily="MontserratUWU"
                             />
                             <Label
-                                Text="FINAL"
+                                Text="PARA TENER 6"
                                 HorizontalOptions="Start"
                                 Margin="10,0,10,0"
                                 FontAttributes="Bold"
-                                FontSize="30"
+                                FontSize="20"
                                 TextColor="#8EC5FC"
                                 FontFamily="MontserratUWU"
                             />
                         </VerticalStackLayout>
                         <Label
-                            Text="{Binding Materia.CalificacionTotal}"
+                            Text="{Binding Semestre.CalificacionParaPasar}"
                             VerticalOptions="Center"
                             FontAttributes="Bold"
-                            FontSize="45"
+                            FontSize="40"
                             FontFamily="MontserratUWU"
                         />
                     </HorizontalStackLayout>
-                    
+                    <HorizontalStackLayout
+                        Grid.Row="6"
+                        Grid.ColumnSpan="4"
+                        HorizontalOptions="End"
+                        Margin="0,0,90,0">
+                        <VerticalStackLayout
+                            Spacing="-7"
+                            VerticalOptions="Center">
+                            <Label
+                                Text="Necesitas sacar un"
+                                HorizontalOptions="Start"
+                                Margin="10,0,10,5"
+                                FontAttributes="Bold"
+                                FontSize="15"
+                                FontFamily="MontserratUWU"
+                            />
+                            <Label
+                                Text="PARA TENER 10"
+                                HorizontalOptions="Start"
+                                Margin="10,0,10,0"
+                                FontAttributes="Bold"
+                                FontSize="20"
+                                TextColor="#8EC5FC"
+                                FontFamily="MontserratUWU"
+                            />
+                        </VerticalStackLayout>
+                        <Label
+                            Text="{Binding Semestre.CalificacionParaSerGood}"
+                            VerticalOptions="Center"
+                            FontAttributes="Bold"
+                            FontSize="40"
+                            FontFamily="MontserratUWU"
+                        />
+                    </HorizontalStackLayout>
                 </Grid>
             </Frame>
         </Grid>

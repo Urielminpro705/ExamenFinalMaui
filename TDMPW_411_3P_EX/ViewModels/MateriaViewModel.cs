@@ -67,7 +67,9 @@ public partial class MateriaViewModel : ObservableObject
         for(int i = 0; i < 3; i++) {
             valores[i] = Materia.ValorRubros[i] > 0 && Materia.ValorRubros[i] <= 100 ? Materia.ValorRubros[i] : 0;
         }
-        valores[2] = valores.Sum() == 100 ? valores[2] : 100 - valores.Sum() + valores[2];
+        valores[2] = valores.Sum() == 100 ? valores[2] : (valores.Sum()-valores[2] > 100 ? 0 : 100 - valores.Sum() + valores[2]);
+        valores[1] = valores.Sum() == 100 ? valores[1] : 100 - valores.Sum() + valores[1];
+        valores[0] = valores.Sum() == 100 ? valores[0] : 100 - valores.Sum() + valores[0];
         Materia.ValorRubros = valores;
         double[] calificaciones = [0,0,0];
         for(int i = 0; i < 3; i++) {
