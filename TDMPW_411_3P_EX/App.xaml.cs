@@ -1,4 +1,5 @@
-﻿namespace TDMPW_411_3P_EX;
+﻿using TDMPW_411_3P_EX.Views;
+namespace TDMPW_411_3P_EX;
 
 public partial class App : Application
 {
@@ -6,6 +7,6 @@ public partial class App : Application
 	{
 		InitializeComponent();
 
-		MainPage = new AppShell();
+		MainPage = new AppView();
 	}
 }
